@@ -1,4 +1,11 @@
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDeleteExpression;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
+import com.amazonaws.services.dynamodbv2.model.AttributeValue;
+import com.amazonaws.services.dynamodbv2.model.ConditionalCheckFailedException;
+import com.amazonaws.services.dynamodbv2.model.ExpectedAttributeValue;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class TaskDAO {
 
@@ -18,6 +25,7 @@ public class TaskDAO {
      */
     public void deleteTask(Task task) {
         //TODO: Implement functionality to delete the task that's passed in
+        mapper.delete(task);
     }
 
     /**
